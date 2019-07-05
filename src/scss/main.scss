@@ -1,0 +1,57 @@
+@import url('https://fonts.googleapis.com/css?family=Karla:400,700&display=swap&subset=latin-ext');
+
+
+$font-path: '~fonts';
+
+@font-face {
+  font-family: "Animosa-ExtraLight";
+  src: url("./fonts/Animosa-ExtraLight.eot"); /* IE9 Compat Modes */
+  src: url("./fonts/Animosa-ExtraLight.eot?#iefix") format("embedded-opentype"), /* IE6-IE8 */
+    url("./fonts/Animosa-ExtraLight.otf") format("opentype"), /* Open Type Font */
+    url("./fonts/Animosa-ExtraLight.ttf") format("truetype"), /* Safari, Android, iOS */
+    url("./fonts/Animosa-ExtraLight.woff") format("woff"), /* Modern Browsers */
+    url("./fonts/Animosa-ExtraLight.woff2") format("woff2"); /* Modern Browsers */
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "Animosa-Regular";
+  src: url("./fonts/Animosa-Regular.eot"); /* IE9 Compat Modes */
+  src: url("./fonts/Animosa-Regular.eot?#iefix") format("embedded-opentype"), /* IE6-IE8 */
+    url("./fonts/Animosa-Regular.otf") format("opentype"), /* Open Type Font */
+    url("./fonts/Animosa-Regular.ttf") format("truetype"), /* Safari, Android, iOS */
+    url("./fonts/Animosa-Regular.woff") format("woff"), /* Modern Browsers */
+    url("./fonts/Animosa-Regular.woff2") format("woff2"); /* Modern Browsers */
+  font-weight: normal;
+  font-style: normal;
+}
+
+$primary: #02FF92;
+$secondary: #00FFED;
+$tetriary: #FF00DC;
+$background: #000000;
+$text: #FFFFFF;
+
+body{
+  margin: 0;
+  background: $background;
+  font-family: 'Karla', sans-serif;
+  color: $primary;
+  overflow: hidden;
+}
+
+#welcome {
+  position: absolute;
+  left: 300px;
+  top: 300px;
+  display: flex;
+  flex-direction: column;
+  max-width: 600px;
+}
+
+h1{
+  color: $primary;
+  font-family: 'Animosa-ExtraLight';
+  font-size: 3.5rem;
+}
