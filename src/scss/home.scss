@@ -1,0 +1,32 @@
+.welcome-rectangle {
+  width: 90vw;
+  height: 80vh;
+  border-width: 2px;
+  border-color: $primary;
+  border-style: solid;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: 1fr;
+  grid-template-areas: ". .";
+}
+
+.home {
+  width: 100%;
+  height: 100vh;
+  @extend %flex-center;
+}
+
+.welcome-a {
+  @extend %flex-center;
+  h1 {
+    @extend %flex-center;
+    flex-wrap: wrap;
+    flex-direction: column;
+    font-size: 3rem;
+    font-weight: 400;
+    align-items: flex-start;
+  }
+  h1>* {
+    flex: 1;
+  }
+}

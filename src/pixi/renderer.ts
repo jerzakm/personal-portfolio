@@ -7,17 +7,20 @@ export let stage: PIXI.Container
 
 
 export function initRenderer(){
+  const canvas = makeCanvas()
+
   renderer = new PIXI.Renderer(
     { width: window.innerWidth,
         height: window.innerHeight,
         backgroundColor: 0x010101,
-        forceFXAA: false,
-        powerPreference: 'high-performance'
+        forceFXAA: true,
+        powerPreference: 'high-performance',
+        view: canvas
     }
   )
 
   ticker = new PIXI.Ticker()
-  ticker.maxFPS = 144
+  ticker.maxFPS = 60
 
   stage = new PIXI.Container();
 
@@ -29,9 +32,16 @@ export function initRenderer(){
 
   document.body.appendChild(renderer.view)
 
-  PIXI.settings.SCALE_MODE = PIXI.SCALE_MODES.NEAREST
+  PIXI.settings.SCALE_MODE = PIXI.SCALE_MODES.LINEAR
 
   window.addEventListener('resize', ()=> {
     renderer.resize(renderer.screen.width,renderer.screen.height)
   })
+}
+
+const makeCanvas = () => {
+  const canvas = document.createElement('canvas')
+  canvas.id='pixi'
+  document.body.appendChild(canvas)
+  return canvas;
 }

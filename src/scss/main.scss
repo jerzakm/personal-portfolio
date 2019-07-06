@@ -1,7 +1,5 @@
 @import url('https://fonts.googleapis.com/css?family=Karla:400,700&display=swap&subset=latin-ext');
-
-
-$font-path: '~fonts';
+@import 'mixins';
 
 @font-face {
   font-family: "Animosa-ExtraLight";
@@ -33,25 +31,33 @@ $tetriary: #FF00DC;
 $background: #000000;
 $text: #FFFFFF;
 
+
+
 body{
   margin: 0;
   background: $background;
   font-family: 'Karla', sans-serif;
   color: $primary;
-  overflow: hidden;
-}
-
-#welcome {
-  position: absolute;
-  left: 300px;
-  top: 300px;
-  display: flex;
-  flex-direction: column;
-  max-width: 600px;
+  @extend %flex-center;
+  align-items: flex-start;
 }
 
 h1{
   color: $primary;
   font-family: 'Animosa-ExtraLight';
-  font-size: 3.5rem;
+}
+
+@import 'nav';
+@import 'home';
+
+#lorem {
+  position: absolute;
+  top: 1000px;
+}
+
+#pixi {
+  width: 100%;
+  height: 100vh;
+  position: fixed;
+  z-index: -1;
 }
