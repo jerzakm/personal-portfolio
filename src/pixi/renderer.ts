@@ -12,7 +12,8 @@ export function initRenderer(){
   renderer = new PIXI.Renderer(
     { width: window.innerWidth,
         height: window.innerHeight,
-        backgroundColor: 0x010101,
+        // backgroundColor: 0x010101,
+        transparent: true,
         forceFXAA: true,
         powerPreference: 'high-performance',
         view: canvas
@@ -20,7 +21,7 @@ export function initRenderer(){
   )
 
   ticker = new PIXI.Ticker()
-  ticker.maxFPS = 60
+  ticker.maxFPS = 144
 
   stage = new PIXI.Container();
 
