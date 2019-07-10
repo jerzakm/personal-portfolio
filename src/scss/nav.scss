@@ -5,6 +5,7 @@
   font-size: 1.5rem;
   width: 90vw;
   position: fixed;
+  top: 0;
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -34,6 +35,8 @@ $logo-size: 80px;
   a{
     margin-left:30px;
     letter-spacing: 2px;
+    background-color: $background;
+    padding: 10px;
   }
 
 }

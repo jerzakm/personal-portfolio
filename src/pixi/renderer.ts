@@ -43,6 +43,8 @@ export function initRenderer(){
 const makeCanvas = () => {
   const canvas = document.createElement('canvas')
   canvas.id='pixi'
+  canvas.style.position = 'fixed'
+  canvas.style.top = '0'
   document.body.appendChild(canvas)
   return canvas;
 }

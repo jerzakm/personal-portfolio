@@ -33,7 +33,21 @@
 
 #git {
   position: fixed;
-  top: 480px;
-  left: 1330px;
+  fill: white;
+  width: 60px;
+  top: 515px;
+  left: 1370px;
   z-index: 9999;
+  animation: gh 3s infinite linear;
+
+}
+
+@keyframes gh{
+  0% {
+  }
+  50% {
+    transform: scale(1.1);
+  }
+  100%{
+  }
 }

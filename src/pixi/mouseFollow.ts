@@ -50,7 +50,7 @@ export const initMouseFollow = ()=> {
     const now = Date.now()
     for(let circle of pointerCircles){
       if(circle.radius>0&&now-circle.lastDraw>0){
-        const color = circle.radius<20? 0x121212 : circle.radius<40? 0x121212 : colourScheme().secondary
+        const color = circle.radius<15? colourScheme().primary : circle.radius<40? 0x121212 : colourScheme().secondary
         graphics.lineStyle(2, color, 1)
         graphics.beginFill(color)
         // graphics.lineStyle(2, 0x121212, 1)

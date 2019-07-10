@@ -1,0 +1,21 @@
+.projects {
+  width: 90vw;
+  height: 100vh;
+  display: flex;
+  z-index: 101;
+  align-items: stretch;
+}
+
+#skills {
+  background-color: $primary;
+  flex: 30px 3 0;
+}
+#featuredProjects{
+  flex: 30px 4 0;
+  h1{
+    font-family: 'Karla', sans-serif;
+    color: $text;
+    font-size: 2rem;
+    font-weight: 400;
+  }
+}

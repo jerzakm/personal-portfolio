@@ -94,6 +94,8 @@ export const initCircleSquare = () => {
   }
 
   const pointerDistanceMax = distance({x:0, y:0}, {x: 1400, y: 500})
+
+  // TICKER
   ticker.add((delta)=> {
     let pointerDistance = distance(mouseLoc, {x: 1400, y: 500})
     pointerDistance = pointerDistance < 50? 50 : pointerDistance
@@ -110,8 +112,6 @@ export const initCircleSquare = () => {
       graphics.drawCircle(circlePoint.x, circlePoint.y, 5)
       graphics.endFill()
     }
-
-
 
     for(let r = 0; r < rotationCircles.length; r++) {
       rotationCircles[r].cr = rotationCircles[r].r + (((pointerDistanceMax/pointerDistance)/10)*tRadius)

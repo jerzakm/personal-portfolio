@@ -10,8 +10,8 @@ import { initCircleSquare } from './pixi/circleSquareAnim'
 const TWEEN = require('@tweenjs/tween.js')
 
 initRenderer()
-// initMouseFollow()
 initCircleSquare()
+// initMouseFollow()
 // initAnimatedTriangles()
 
 const graphics = new Graphics();
@@ -19,6 +19,8 @@ const graphics = new Graphics();
 ticker.add((delta)=> {
 
 })
+
+console.log(window)
 
 
 
