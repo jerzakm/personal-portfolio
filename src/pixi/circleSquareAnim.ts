@@ -1,4 +1,4 @@
-import { Graphics, Container, Text, GRAPHICS_CURVES } from 'pixi.js';
+import { Graphics, Container, Text, GRAPHICS_CURVES, IPoint } from 'pixi.js';
 import { findNewPoint, distance, pointsAngleDeg, checkIntersection, Point, Line, Circle } from '../util/math'
 import { initRenderer, stage, ticker, renderer } from '../pixi/renderer'
 import { colourScheme } from '../core/style'
@@ -9,17 +9,17 @@ export const initCircleSquare = () => {
   const graphics = new Graphics()
   gContainer.addChild(graphics)
   stage.addChild(gContainer)
-  const labels = new Container()
-  stage.addChild(labels)
 
-  gContainer.position.x = 1400
-  gContainer.position.y = 550
+  gContainer.position.x = positionCircle().x
+  gContainer.position.y = positionCircle().y
 
   const circle = {
     x: 0,
     y: 0,
     radius: 250
   }
+  const baseLineWidth = 2
+  let lineWidth = baseLineWidth
 
   const circlePointsCount = 64
 
@@ -78,6 +78,28 @@ export const initCircleSquare = () => {
     }
   })
 
+  let rectSize = 0
+
+  const about = window.innerHeight
+  const projects = window.innerHeight*2
+
+  window.addEventListener('scroll', (e)=>{
+    if(window.scrollY<about){
+      for(let i = 0; i<circlePoints.length; i++){
+        circlePoints[i] = findNewPoint(circle, (360/circlePointsCount)*i, circle.radius + window.scrollY)
+      }
+      lineWidth = baseLineWidth + window.scrollY**2/80000
+      gContainer.position.x = positionCircle().x
+    }
+    if(window.scrollY>about){
+      const change = (window.scrollY/window.innerHeight)**15
+      console.log(change)
+      gContainer.position.x = positionCircle().x+ change
+    }
+    rectSize = window.scrollY
+    // console.log(`${window.scrollY} / ${window.innerHeight}`)
+  })
+
   const tRadius = circle.radius / 10
   const rotationCircles: any[] = []
 
@@ -94,22 +116,21 @@ export const initCircleSquare = () => {
   }
 
   const pointerDistanceMax = distance({x:0, y:0}, {x: 1400, y: 500})
-
   // TICKER
   ticker.add((delta)=> {
     let pointerDistance = distance(mouseLoc, {x: 1400, y: 500})
     pointerDistance = pointerDistance < 50? 50 : pointerDistance
     graphics.clear()
-    graphics.lineStyle(2, 0x121212, 1)
+    graphics.lineStyle(lineWidth, 0x121212, 1)
     graphics.drawCircle(circle.x,circle.y, circle.radius)
 
     for(let circlePoint of circlePoints){
-      graphics.lineStyle(2, 0x121212, 1)
+      graphics.lineStyle(lineWidth, 0x121212, 1)
       graphics.moveTo(circlePoint.x, circlePoint.y)
       graphics.lineTo(circle.x,circle.y)
-      graphics.lineStyle(2, colourScheme().primary, 1)
+      graphics.lineStyle(0, colourScheme().primary, 1)
       graphics.beginFill(colourScheme().primary)
-      graphics.drawCircle(circlePoint.x, circlePoint.y, 5)
+      graphics.drawCircle(circlePoint.x, circlePoint.y, 7)
       graphics.endFill()
     }
 
@@ -121,7 +142,7 @@ export const initCircleSquare = () => {
 
 
       // graphics.lineStyle(2, 0x121212, 1)
-
+      graphics.lineStyle(lineWidth, colourScheme().primary, 1)
       graphics.moveTo(p.x,p.y)
       graphics.lineTo(circlePoints[r].x, circlePoints[r].y)
 
@@ -132,4 +153,11 @@ export const initCircleSquare = () => {
       rotationCircles[r].angle = rotationCircles[r].angle>360? rotationCircles[r].angle-360: rotationCircles[r].angle
     }
   })
+}
+
+const positionCircle = ()=> {
+  return {
+    x: 1410,
+    y: 550
+  }
 }

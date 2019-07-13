@@ -13,23 +13,13 @@
   font-style: normal;
 }
 
-// @font-face {
-//   font-family: "Animosa-Regular";
-//   src: url("./fonts/Animosa-Regular.eot"); /* IE9 Compat Modes */
-//   src: url("./fonts/Animosa-Regular.eot?#iefix") format("embedded-opentype"), /* IE6-IE8 */
-//     url("./fonts/Animosa-Regular.otf") format("opentype"), /* Open Type Font */
-//     url("./fonts/Animosa-Regular.ttf") format("truetype"), /* Safari, Android, iOS */
-//     url("./fonts/Animosa-Regular.woff") format("woff"), /* Modern Browsers */
-//     url("./fonts/Animosa-Regular.woff2") format("woff2"); /* Modern Browsers */
-//   font-weight: normal;
-//   font-style: normal;
-// }
-
 $primary: #02FF92;
 $secondary: #00FFED;
 $tetriary: #FF00DC;
 $background: #000000;
 $text: #FFFFFF;
+$textDarker: #afafaf;
+$textDark: #121212;
 
 
 
@@ -45,11 +35,13 @@ body{
 h1{
   color: $primary;
   font-family: 'Animosa-ExtraLight';
+
 }
 
 @import 'nav';
 @import 'home';
 @import 'projects';
+@import 'about';
 
 #lorem {
   position: absolute;
@@ -61,4 +53,15 @@ h1{
   height: 100vh;
   position: fixed;
   z-index: 100;
+}
+
+.lowkey {
+  color: $textDark;
+}
+
+.pill {
+  background-color: $primary;
+  color: $background;
+  border-radius: 10px;
+  padding: 5px;
 }

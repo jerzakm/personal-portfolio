@@ -13,15 +13,16 @@ export function initRenderer(){
     { width: window.innerWidth,
         height: window.innerHeight,
         // backgroundColor: 0x010101,
+        antialias: true,
         transparent: true,
-        forceFXAA: true,
-        powerPreference: 'high-performance',
+        forceFXAA: false,
+        // powerPreference: 'high-performance',
         view: canvas
     }
   )
 
   ticker = new PIXI.Ticker()
-  ticker.maxFPS = 144
+  ticker.maxFPS = 60
 
   stage = new PIXI.Container();
 

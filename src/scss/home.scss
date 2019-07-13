@@ -26,23 +26,27 @@
     font-weight: 400;
     align-items: flex-start;
   }
+  .lowkey {
+    font-size: 2rem;
+    color: $textDark;
+  }
   h1>* {
     flex: 1;
   }
 }
 
 #git {
-  position: fixed;
+  position: absolute;
   fill: white;
   width: 60px;
   top: 515px;
   left: 1370px;
   z-index: 9999;
-  animation: gh 3s infinite linear;
+  animation: scalePulse 3s infinite linear;
 
 }
 
-@keyframes gh{
+@keyframes scalePulse{
   0% {
   }
   50% {

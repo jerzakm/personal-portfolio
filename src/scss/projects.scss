@@ -1,21 +1,118 @@
 .projects {
-  width: 90vw;
-  height: 100vh;
+  width: 80vw;
+  min-height: 100vh;
   display: flex;
   z-index: 101;
-  align-items: stretch;
+  @extend %flex-center;
 }
 
-#skills {
-  background-color: $primary;
-  flex: 30px 3 0;
+.project-card {
+  height: 640px;
+  margin: 30px;
+  max-width: 450px;
+  border-width: 2px;
+  border-style: solid;
+  border-color: $primary;
+  padding: 7px;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  grid-template-rows: 1fr 1max-content 1fr;
+  grid-template-areas: "Img Img Img" "Desc Desc Desc" "Tags Tags Links";
 }
-#featuredProjects{
-  flex: 30px 4 0;
+
+.project-img {
+  background-color: gray;
+  width: 100%;
+  height: 280px;
+  grid-area: Img;
+  div{
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+  }
+  .project-gif {
+    background: $primary;
+    color: $background;
+    // width: 60px;
+    font-size: 1.5rem;
+    padding: 5px;
+    border-radius: 5px;
+    margin: 3px;
+  }
+}
+
+.project-desc{
+  margin: 0 5px 0 5px;
+  grid-area: Desc;
   h1{
-    font-family: 'Karla', sans-serif;
     color: $text;
+    margin: 3px 0 -5px 0;
     font-size: 2rem;
     font-weight: 400;
+  }
+  h2{
+    margin: 0;
+    font-weight: 400;
+    font-size: 1rem;
+  }
+
+  p{
+    color: $textDarker;
+  }
+}
+
+.project-tags{
+  grid-area: Tags;
+  display: flex;
+  flex-wrap: wrap;
+
+
+
+  .project-tag {
+    @extend %flex-center;
+    text-decoration: none;
+    margin: 0 6px 6px 0;
+    border-width: 2px;
+    border-style: dotted;
+    border-color: $primary;
+    background: $background;
+    color: $text;
+    transition: 0.2s;
+    flex-grow: 1;
+  }
+  .project-tag:before{
+    content: "#";
+  }
+  .project-tag:hover {
+    border-style: solid;
+    border-color: $primary;
+    background: $primary;
+    color: $background;
+    // font-weight: 800;
+    transform: scale(1.1);
+  }
+}
+
+.project-links{
+  grid-area: Links;
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: column;
+  align-content: flex-end;
+  .project-link {
+    color: white;
+    svg {
+      fill: white;
+      width: 100px;
+      // height: 100px;
+
+    }
+    // background: $primary;
+    border-radius: 8px;
+    padding: 5px;
+    margin: 3px;
+    font-weight: 800;
+    font-size: 1.2rem;
+    @extend %flex-center;
   }
 }

@@ -3,7 +3,7 @@ import { initRenderer, stage, ticker, renderer } from './pixi/renderer'
 import { colourScheme } from './core/style'
 const styleFix = style
 import { initMouseFollow } from './pixi/mouseFollow'
-import { Graphics } from 'pixi.js'
+import * as PIXI from 'pixi.js'
 import { findNewPoint, distance, pointsAngleDeg, checkIntersection } from './util/math'
 import { initAnimatedTriangles } from './pixi/animatedTriangles'
 import { initCircleSquare } from './pixi/circleSquareAnim'
@@ -13,15 +13,3 @@ initRenderer()
 initCircleSquare()
 // initMouseFollow()
 // initAnimatedTriangles()
-
-const graphics = new Graphics();
-
-ticker.add((delta)=> {
-
-})
-
-console.log(window)
-
-
-
-stage.addChild(graphics);
