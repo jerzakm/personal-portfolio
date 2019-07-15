@@ -1,0 +1,27 @@
+.contact {
+  min-height: 100vh;
+  // background-color: $background;
+  @extend %flex-center;
+  flex-direction: column;
+  h1 {
+    color: $text;
+    font-family: 'Open Sans', sans-serif;
+    font-size: 4rem;
+    letter-spacing: 1px;
+    margin: 10px;
+  }
+  z-index: 9999;
+
+  a{
+    text-decoration: none;
+    color:$text;
+    margin-bottom: 10px;
+  }
+}
+
+.contact-email {
+  font-size: 2rem;
+  span {
+    color: $primary;
+  }
+}

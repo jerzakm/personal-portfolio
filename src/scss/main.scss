@@ -1,4 +1,6 @@
 @import url('https://fonts.googleapis.com/css?family=Karla:400,700&display=swap&subset=latin-ext');
+@import url('https://fonts.googleapis.com/css?family=Open+Sans&display=swap');
+
 @import 'mixins';
 
 @font-face {
@@ -26,7 +28,8 @@ $textDark: #121212;
 body{
   margin: 0;
   background: $background;
-  font-family: 'Karla', sans-serif;
+  // font-family: 'Karla', sans-serif;
+  font-family: 'Open Sans', sans-serif;
   color: $primary;
   @extend %flex-center;
   flex-direction: column;
@@ -42,6 +45,8 @@ h1{
 @import 'home';
 @import 'projects';
 @import 'about';
+@import 'articles';
+@import 'contact';
 
 #lorem {
   position: absolute;

@@ -88,16 +88,14 @@ export const initCircleSquare = () => {
       for(let i = 0; i<circlePoints.length; i++){
         circlePoints[i] = findNewPoint(circle, (360/circlePointsCount)*i, circle.radius + window.scrollY)
       }
-      lineWidth = baseLineWidth + window.scrollY**2/80000
+      lineWidth = baseLineWidth + window.scrollY**2/90000
       gContainer.position.x = positionCircle().x
     }
     if(window.scrollY>about){
       const change = (window.scrollY/window.innerHeight)**15
-      console.log(change)
       gContainer.position.x = positionCircle().x+ change
     }
     rectSize = window.scrollY
-    // console.log(`${window.scrollY} / ${window.innerHeight}`)
   })
 
   const tRadius = circle.radius / 10
