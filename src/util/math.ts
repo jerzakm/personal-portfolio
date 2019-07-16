@@ -33,7 +33,7 @@ export const findNewPoint = (start: Point, angle: number, distance: number): Poi
 
 export const findClosestPoint = (from: Point, points: Point[], ignorePoints: Point[]) => {
   let closest = {x: 0, y: 0}
-  let closestD: number
+  let closestD: number|undefined
 
   for(let point of points){
 

@@ -12,7 +12,13 @@
   a{
     text-decoration: none;
     color: $text;
+    transition: 0.3s cubic-bezier(0.075, 0.82, 0.165, 1);
   };
+  a:hover{
+    // background-color: $primary;
+    // color: $background;
+    color: $primary;
+  }
   z-index: 9999;
 }
 

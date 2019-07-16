@@ -17,27 +17,24 @@
 }
 
 .welcome-a {
-  @extend %flex-center;
-  flex-wrap: wrap;
-  flex-direction: column;
-  h1 {
-    @extend %flex-center;
-    flex-wrap: wrap;
-    flex-direction: column;
+  position: relative;
+  left: 100px;
+  top:250px;
+  max-width: 750px;
+  // text-shadow:
+  //    1px  1px     $tetriary,
+  //   -1px  1px     $tetriary,
+  //    1px -1px     $tetriary,
+  //   -1px -1px     $tetriary;
+  h1{
+    color: $text;
     font-size: 3rem;
-    font-weight: 400;
-    align-items: flex-start;
-  }
-  .lowkey {
-    font-size: 2rem;
-    color: $textDark;
-  }
-  h1>* {
-    flex: 1;
+    span{
+      color: $primary;
+    }
   }
   h2 {
     color: $text;
-    margin: 0;
   }
 }
 
