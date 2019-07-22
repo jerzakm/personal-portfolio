@@ -16,7 +16,7 @@ export const initCircleSquare = () => {
   const circle = {
     x: 0,
     y: 0,
-    radius: 250
+    radius: 300
   }
   const baseLineWidth = 2
   let lineWidth = baseLineWidth

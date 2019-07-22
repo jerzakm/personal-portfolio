@@ -10,17 +10,4 @@ import { renderNav } from './dom/nav';
 // initCircleSquare()
 // initAnimatedTriangles()
 
-
-
-// <navigation class="main-nav">
-//         <logo><span class="nav-logo">M</span></logo>
-//         <links class="nav-links">
-//             <a href="#">about</a>
-//             <a href="#">projects</a>
-//             <a href="#">articles</a>
-//             <a href="#">services</a>
-//             <a href="#">contact</a>
-//         </links>
-//     </navigation>
-
 renderNav()

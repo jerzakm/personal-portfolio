@@ -26,12 +26,18 @@
 .card-container {
   z-index: 101;
   @extend %flex-center;
+
+  flex-direction: column;
+  flex-wrap: wrap;
+
+  @include m {
+    flex-direction: row;
+  }
 }
 
 .project-card {
-  height: 660px;
   margin: 30px;
-  max-width: 450px;
+  max-width: 550px;
   border-width: 2px;
   border-style: solid;
   border-color: $primary;

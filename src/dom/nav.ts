@@ -3,7 +3,7 @@ export const renderNav = () => {
   menu.className = 'main-nav'
 
   const hamburger = document.createElement('hamburger')
-  let burgerOpen = false
+  let burgerOpen = true
   hamburger.className = 'hamburger'
   hamburger.appendChild(document.createElement('div'))
   hamburger.appendChild(document.createElement('div'))

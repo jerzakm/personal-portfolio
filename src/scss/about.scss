@@ -1,14 +1,22 @@
 .about {
-  width: 100%;
+  width: 90vw;
   min-height: 100vh;
   z-index: 101;
+  position: relative;
+  div {
+    height: 100%;
+    @extend %flex-center;
+    flex-direction: column;
+  }
+  @include l{
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 1fr;
+    grid-template-areas: ". .";
+  }
 }
 
 .about-text {
-  position: relative;
-  left: 300px;
-  top:250px;
-  max-width: 750px;
   text-shadow:
      1px  1px     #000,
     -1px  1px     #000,
@@ -21,14 +29,23 @@
   h2 {
     color: $text;
   }
+  z-index: 101;
+  @include l{
+    margin-left: 30%;
+  }
+
 }
 
 .skills {
-  width: 500px;
-  height: 500px;
-  background-color: $primary;
-  position: relative;
-  left: 1150px;
-  top: -120px;
-  border-radius: 250px
+  width: 90%;
+  min-height: 15rem;
+  border-radius: 3rem;
+  z-index: 100;
+  margin-top: 2rem;
+  @include l {
+    width: 500px;
+    height: 500px;
+    border-radius: 250px;
+    background-color: $primary;
+  }
 }
